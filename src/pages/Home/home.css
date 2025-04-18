@@ -10,7 +10,7 @@
     margin: 20px auto;
 }
 
-.logo > img {
+.logo>img {
     max-width: 300px;
 }
 
@@ -32,17 +32,17 @@
     gap: 10px;
 }
 
-.services > h1 {
+.services>h1 {
     font-size: 20px;
 }
 
-.services > div {
+.services>div {
     display: flex;
     flex-direction: row;
     gap: 5px;
 }
 
-.services > div > div {
+.services>div>div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,7 +66,7 @@
     font-size: 12px;
 }
 
-.select-service button{
+.select-service button {
     padding: 6px 10px;
     border: 0;
     border-radius: 5px;
@@ -98,7 +98,7 @@
     justify-content: space-between;
 }
 
-.text-welcome > .text {
+.text-welcome>.text {
     width: 170px;
     height: 100%;
     display: flex;
@@ -107,7 +107,7 @@
     justify-content: center;
 }
 
-.text-action{
+.text-action {
     display: none;
 }
 
@@ -143,15 +143,25 @@
     gap: 10px;
 }
 
-.reviews > h1 {
+.reviews>h1 {
     font-size: 20px;
 }
 
-.reviews > div {
+.reviews>div{
+    overflow: hidden;
+}
+
+.reviews>div>div {
+    display: flex;
+    gap: 20px;
+}
+
+.reviews>div>div>div {
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
-    width: 350px;
+    min-width: 0;
+    flex: 0 0 100%;
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
@@ -162,7 +172,7 @@
     align-self: center;
 }
 
-.footer{
+.footer {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -182,162 +192,191 @@
     box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
-.footer > a > span {
+.footer>a>span {
     display: none;
 }
 
 
 /* -------------------- */
 
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* -------------------- */
+
 @media (min-width: 480px) and (max-width: 768px) {
-    
+
     .services {
         width: 430px;
     }
-    
-    .services > div {
+
+    .services>div {
         gap: 5px;
     }
-    
-    .services > div > div {
+
+    .services>div>div {
         gap: 10px;
     }
-    
+
     .services img {
         max-width: 100px;
     }
-    
+
     .select-service {
         font-size: 14px;
         gap: 5px;
     }
-    
-    .select-service button{
+
+    .select-service button {
         padding: 6px 10px;
         font-size: 16px;
     }
-    
+
     .welcome {
         width: 430px;
         height: 30dvh;
     }
-    
-    .text-welcome > .text {
+
+    .text-welcome>.text {
         width: 230px;
     }
-    
-    .text-action{
+
+    .text-action {
         display: none;
     }
-    
+
     .text-welcome h1 {
         font-size: 1.6rem;
     }
-    
+
     .text-welcome p {
         font-size: 12px;
     }
-    
+
     .text-welcome button {
         padding: 10px 30px;
         font-size: 15px;
     }
-    
-    .reviews > div {
+
+    .reviews>div {
         width: 430px;
     }
-    
-    .footer > a > span {
+
+    .footer>a>span {
         display: none;
     }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
-    
+
     .logo {
         margin: 20px auto;
     }
-    
-    .logo > img {
+
+    .logo>img {
         max-width: 300px;
     }
-    
+
     .services {
         width: 600px;
     }
-    
-    .services > div {
+
+    .services>div {
         gap: 40px;
     }
-    
-    .services > div > div {
+
+    .services>div>div {
         gap: 10px;
     }
-    
+
     .services img {
         max-width: 150px;
     }
-    
+
     .select-service {
         font-size: 18px;
         gap: 10px;
     }
-    
-    .select-service button{
+
+    .select-service button {
         padding: 6px 10px;
         font-size: 18px;
     }
-    
+
     .welcome {
         width: 600px;
         height: 38dvh;
     }
-    
-    .text-welcome > .text {
+
+    .text-welcome>.text {
         width: 250px;
     }
-    
-    .text-action{
+
+    .text-action {
         display: flex;
         position: relative;
         left: -140px;
         bottom: 10px;
     }
-    
+
     .text-welcome h1 {
         font-size: 2rem;
     }
-    
+
     .text-welcome p {
         font-size: 13px;
     }
-    
+
     .text-welcome button {
         padding: 10px 30px;
         font-size: 15px;
     }
-    
-    .reviews > div {
+
+    .reviews>div {
         width: 600px;
     }
-    
+
     .footer a {
         align-items: center;
         padding: 10px 20px;
     }
-    
-    .footer > a > span {
+
+    .footer>a>span {
         display: flex;
     }
 }
 
 @media (min-width: 992px) {
-    .services{
+    .services {
         top: calc(50% - 200px);
+        animation: slideInLeft 0.8s ease-out forwards;
     }
 
-    .reviews{
-        top: calc(50% - 200px);;
+    .reviews {
+        top: calc(50% - 200px);
+        animation: slideInRight 0.8s ease-out forwards;
     }
 }
 
@@ -349,74 +388,74 @@
     .logo {
         margin-top: 10px;
     }
-    
-    .logo > img {
+
+    .logo>img {
         max-width: 400px;
     }
-    
+
     .container-center {
         flex-direction: row;
         align-items: flex-start;
         position: relative;
     }
-    
+
     .services {
         gap: 10px;
         position: absolute;
         left: -130px;
     }
 
-    .services > div{
+    .services>div {
         max-width: 200px;
         padding: 5px;
-        background-color: rgb(244, 239,235);
+        background-color: rgb(244, 239, 235);
         box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
         flex-direction: column;
         border-radius: 5px;
     }
-    
-    .services > div > div {
+
+    .services>div>div {
         flex-direction: row;
         justify-content: space-between;
     }
-    
+
     .services img {
         max-width: 60px;
     }
-    
+
     .select-service {
         font-size: 14px;
         gap: 30px;
         align-items: flex-end;
     }
-    
+
     .welcome {
         width: 700px;
         height: 60dvh;
     }
-    
-    .text-welcome > .text {
+
+    .text-welcome>.text {
         width: 250px;
         justify-content: flex-start;
         margin-right: 120px;
         margin-top: 40px;
     }
-    
-    .text-action{
+
+    .text-action {
         display: flex;
         position: absolute;
         bottom: 5%;
         left: 25%;
     }
-    
+
     .text-welcome h1 {
         font-size: 2rem;
     }
-    
+
     .text-welcome p {
         font-size: 1rem;
     }
-    
+
     .text-welcome button {
         padding: 10px 30px;
         font-size: 18px;
@@ -428,29 +467,28 @@
         position: absolute;
     }
 
-    .reviews > h1 {
+    .reviews>h1 {
         align-self: flex-end;
     }
-    
-    .reviews > div {
-        padding: 10px;
+
+    .reviews>div {
         border-radius: 5px;
         max-width: 230px;
     }
-    
-    .footer{
+
+    .footer {
         gap: 20px;
         bottom: 10px;
     }
-    
+
     .footer a {
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
         padding: 10px 20px;
-    } 
+    }
 
-    .footer > a > span {
+    .footer>a>span {
         display: flex;
     }
 }
@@ -463,75 +501,75 @@
     .logo {
         margin: 0;
     }
-    
-    .logo > img {
+
+    .logo>img {
         max-width: 600px;
     }
-    
+
     .container-center {
         flex-direction: row;
         align-items: flex-start;
         position: relative;
     }
-    
+
     .services {
         gap: 10px;
         position: absolute;
         left: -130px;
     }
 
-    .services > div{
+    .services>div {
         max-width: 245px;
         padding: 10px;
-        background-color: rgb(244, 239,235);
+        background-color: rgb(244, 239, 235);
         box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
         flex-direction: column;
         border-radius: 5px;
         max-height: 350px;
     }
-    
-    .services > div > div {
+
+    .services>div>div {
         flex-direction: row;
         justify-content: space-between;
     }
-    
+
     .services img {
         max-width: 60px;
     }
-    
+
     .select-service {
         font-size: 15px;
         gap: 30px;
         align-items: flex-end;
     }
-    
+
     .welcome {
         width: 900px;
         height: 70dvh;
     }
-    
-    .text-welcome > .text {
+
+    .text-welcome>.text {
         width: 300px;
         justify-content: flex-start;
         margin-right: 150px;
         margin-top: 40px;
     }
-    
-    .text-action{
+
+    .text-action {
         display: flex;
         position: absolute;
         bottom: 5%;
         left: 25%;
     }
-    
+
     .text-welcome h1 {
         font-size: 2.2rem;
     }
-    
+
     .text-welcome p {
         font-size: 1rem;
     }
-    
+
     .text-welcome button {
         padding: 10px 50px;
         font-size: 18px;
@@ -543,30 +581,29 @@
         position: absolute;
     }
 
-    .reviews > h1 {
+    .reviews>h1 {
         align-self: flex-end;
     }
-    
-    .reviews > div {
-        padding: 10px;
+
+    .reviews>div {
         border-radius: 5px;
         max-width: 250px;
     }
-    
-    .footer{
+
+    .footer {
         gap: 20px;
         position: relative;
         bottom: 0;
     }
-    
+
     .footer a {
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
         padding: 10px 20px;
-    } 
+    }
 
-    .footer > a > span {
+    .footer>a>span {
         display: flex;
     }
 }
@@ -580,74 +617,74 @@
     .logo {
         margin: 0;
     }
-    
-    .logo > img {
+
+    .logo>img {
         max-width: 600px;
     }
-    
+
     .container-center {
         flex-direction: row;
         align-items: flex-start;
         position: relative;
     }
-    
+
     .services {
         gap: 10px;
         position: absolute;
         left: -200px;
     }
 
-    .services > div{
+    .services>div {
         max-width: 245px;
         padding: 10px;
-        background-color: rgb(244, 239,235);
+        background-color: rgb(244, 239, 235);
         box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
         flex-direction: column;
         border-radius: 5px;
     }
-    
-    .services > div > div {
+
+    .services>div>div {
         flex-direction: row;
         justify-content: space-between;
     }
-    
+
     .services img {
         max-width: 80px;
     }
-    
+
     .select-service {
         font-size: 15px;
         gap: 30px;
         align-items: flex-end;
     }
-    
+
     .welcome {
         width: 900px;
         height: 70dvh;
     }
-    
-    .text-welcome > .text {
+
+    .text-welcome>.text {
         width: 300px;
         justify-content: flex-start;
         margin-right: 150px;
         margin-top: 40px;
     }
-    
-    .text-action{
+
+    .text-action {
         display: flex;
         position: absolute;
         bottom: 5%;
         left: 25%;
     }
-    
+
     .text-welcome h1 {
         font-size: 2.2rem;
     }
-    
+
     .text-welcome p {
         font-size: 1rem;
     }
-    
+
     .text-welcome button {
         padding: 10px 50px;
         font-size: 18px;
@@ -659,30 +696,30 @@
         position: absolute;
     }
 
-    .reviews > h1 {
+    .reviews>h1 {
         align-self: flex-end;
     }
-    
-    .reviews > div {
-        padding: 10px;
+
+    .reviews>div {
         border-radius: 5px;
+        max-width: 350px;
     }
-    
-    .footer{
+
+    .footer {
         gap: 20px;
         position: relative;
         left: -150px;
         bottom: 10px;
     }
-    
+
     .footer a {
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
         padding: 10px 20px;
-    } 
+    }
 
-    .footer > a > span {
+    .footer>a>span {
         display: flex;
     }
 }
