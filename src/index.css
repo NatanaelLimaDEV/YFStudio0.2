@@ -1,0 +1,30 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100dvh;
+}
+
+body {
+  font: 14px;
+  background-color: #C3D2E9;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+button, a{
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+ul{
+  list-style: none;
+}
+
+button:hover, a:hover{
+  scale: 1.05;
+}
