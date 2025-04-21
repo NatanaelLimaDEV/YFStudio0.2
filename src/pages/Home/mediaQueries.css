@@ -1,0 +1,497 @@
+@media (min-width: 480px) and (max-width: 768px) {
+
+    .services {
+        width: 430px;
+    }
+
+    .services>div {
+        gap: 5px;
+    }
+
+    .services>div>div {
+        gap: 10px;
+    }
+
+    .services img {
+        max-width: 100px;
+    }
+
+    .select-service {
+        font-size: 14px;
+        gap: 5px;
+    }
+
+    .select-service button {
+        padding: 6px 10px;
+        font-size: 16px;
+    }
+
+    .welcome {
+        width: 430px;
+        height: 30dvh;
+    }
+
+    .text-welcome>.text {
+        width: 230px;
+    }
+
+    .text-action {
+        display: none;
+    }
+
+    .text-welcome h1 {
+        font-size: 1.6rem;
+    }
+
+    .text-welcome p {
+        font-size: 12px;
+    }
+
+    .text-welcome button {
+        padding: 10px 30px;
+        font-size: 15px;
+    }
+
+    .reviews>div {
+        max-width: 430px;
+    }
+
+    .footer>a>span {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+
+    .logo {
+        margin: 20px auto;
+    }
+
+    .logo>img {
+        max-width: 300px;
+    }
+
+    .services {
+        width: 600px;
+    }
+
+    .services>div {
+        gap: 40px;
+    }
+
+    .services>div>div {
+        gap: 10px;
+    }
+
+    .services img {
+        max-width: 150px;
+    }
+
+    .select-service {
+        font-size: 18px;
+        gap: 10px;
+    }
+
+    .select-service button {
+        padding: 6px 10px;
+        font-size: 18px;
+    }
+
+    .welcome {
+        width: 600px;
+        height: 38dvh;
+    }
+
+    .text-welcome>.text {
+        width: 250px;
+    }
+
+    .text-action {
+        display: flex;
+        position: relative;
+        left: -140px;
+        bottom: 10px;
+    }
+
+    .text-welcome h1 {
+        font-size: 2rem;
+    }
+
+    .text-welcome p {
+        font-size: 13px;
+    }
+
+    .text-welcome button {
+        padding: 10px 30px;
+        font-size: 15px;
+    }
+
+    .reviews>div {
+        max-width: 600px;
+    }
+
+    .footer a {
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .footer>a>span {
+        display: flex;
+    }
+}
+
+@media (min-width: 992px) {
+    .services {
+        top: calc(50% - 200px);
+        animation: slideInLeft 0.8s ease-out forwards;
+    }
+
+    .reviews {
+        top: calc(50% - 200px);
+        animation: slideInRight 0.8s ease-out forwards;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .container {
+        gap: 40px;
+    }
+
+    .logo {
+        margin-top: 10px;
+    }
+
+    .logo>img {
+        max-width: 400px;
+    }
+
+    .container-center {
+        flex-direction: row;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .services {
+        gap: 10px;
+        position: absolute;
+        left: -130px;
+    }
+
+    .services>div {
+        max-width: 200px;
+        padding: 5px;
+        background-color: rgb(244, 239, 235);
+        box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        border-radius: 5px;
+    }
+
+    .services>div>div {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .services img {
+        max-width: 60px;
+    }
+
+    .select-service {
+        font-size: 14px;
+        gap: 30px;
+        align-items: flex-end;
+    }
+
+    .welcome {
+        width: 700px;
+        height: 60dvh;
+    }
+
+    .text-welcome>.text {
+        width: 250px;
+        justify-content: flex-start;
+        margin-right: 120px;
+        margin-top: 40px;
+    }
+
+    .text-action {
+        display: flex;
+        position: absolute;
+        bottom: 5%;
+        left: 25%;
+    }
+
+    .text-welcome h1 {
+        font-size: 2rem;
+    }
+
+    .text-welcome p {
+        font-size: 1rem;
+    }
+
+    .text-welcome button {
+        padding: 10px 30px;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .reviews {
+        right: -120px;
+        position: absolute;
+    }
+
+    .reviews>h1 {
+        align-self: flex-end;
+    }
+
+    .reviews>div {
+        border-radius: 5px;
+        max-width: 230px;
+    }
+
+    .footer {
+        gap: 20px;
+        bottom: 10px;
+    }
+
+    .footer a {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .footer>a>span {
+        display: flex;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .container {
+        justify-content: space-evenly;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .logo>img {
+        max-width: 600px;
+    }
+
+    .container-center {
+        flex-direction: row;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .services {
+        gap: 10px;
+        position: absolute;
+        left: -130px;
+    }
+
+    .services>div {
+        max-width: 245px;
+        padding: 10px;
+        background-color: rgb(244, 239, 235);
+        box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        border-radius: 5px;
+        max-height: 350px;
+    }
+
+    .services>div>div {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .services img {
+        max-width: 60px;
+    }
+
+    .select-service {
+        font-size: 15px;
+        gap: 30px;
+        align-items: flex-end;
+    }
+
+    .welcome {
+        width: 900px;
+        height: 70dvh;
+    }
+
+    .text-welcome>.text {
+        width: 300px;
+        justify-content: flex-start;
+        margin-right: 150px;
+        margin-top: 40px;
+    }
+
+    .text-action {
+        display: flex;
+        position: absolute;
+        bottom: 5%;
+        left: 25%;
+    }
+
+    .text-welcome h1 {
+        font-size: 2.2rem;
+    }
+
+    .text-welcome p {
+        font-size: 1rem;
+    }
+
+    .text-welcome button {
+        padding: 10px 50px;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .reviews {
+        right: -120px;
+        position: absolute;
+    }
+
+    .reviews>h1 {
+        align-self: flex-end;
+    }
+
+    .reviews>div {
+        border-radius: 5px;
+        max-width: 250px;
+    }
+
+    .footer {
+        gap: 20px;
+        position: relative;
+        bottom: 0;
+    }
+
+    .footer a {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .footer>a>span {
+        display: flex;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .logo>img {
+        max-width: 600px;
+    }
+
+    .container-center {
+        flex-direction: row;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .services {
+        gap: 10px;
+        position: absolute;
+        left: -200px;
+    }
+
+    .services>div {
+        max-width: 245px;
+        padding: 10px;
+        background-color: rgb(244, 239, 235);
+        box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        border-radius: 5px;
+    }
+
+    .services>div>div {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .services img {
+        max-width: 80px;
+    }
+
+    .select-service {
+        font-size: 15px;
+        gap: 30px;
+        align-items: flex-end;
+    }
+
+    .welcome {
+        width: 900px;
+        height: 70dvh;
+    }
+
+    .text-welcome>.text {
+        width: 300px;
+        justify-content: flex-start;
+        margin-right: 150px;
+        margin-top: 40px;
+    }
+
+    .text-action {
+        display: flex;
+        position: absolute;
+        bottom: 5%;
+        left: 25%;
+    }
+
+    .text-welcome h1 {
+        font-size: 2.2rem;
+    }
+
+    .text-welcome p {
+        font-size: 1rem;
+    }
+
+    .text-welcome button {
+        padding: 10px 50px;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .reviews {
+        right: -220px;
+        position: absolute;
+    }
+
+    .reviews>h1 {
+        align-self: flex-end;
+    }
+
+    .reviews>div {
+        border-radius: 5px;
+        max-width: 350px;
+    }
+
+    .footer {
+        gap: 20px;
+        position: relative;
+        left: -150px;
+        bottom: 10px;
+    }
+
+    .footer a {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .footer>a>span {
+        display: flex;
+    }
+}
