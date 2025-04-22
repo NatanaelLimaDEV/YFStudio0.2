@@ -12,8 +12,15 @@ import { useState } from "react";
 export default function Home() {
 
   const [form, setForm] = useState(false);
+  const [service, setService] = useState("")
 
   function handleForm() {
+    setForm((prev) => !prev);
+    setService("")
+  }
+
+  function selectService(service: string){
+    setService(service)
     setForm((prev) => !prev);
   }
 
@@ -23,11 +30,11 @@ export default function Home() {
         <img src={logo} />
       </section>
       <div className="container-center">
-        <Welcome handleForm={handleForm} form={form}/>
+        <Welcome handleForm={handleForm} form={form} service={service}/>
         {form ? (
           <></>
         ):(
-        <><Services /><Reaviews /></>
+        <><Services selectService={selectService} /><Reaviews /></>
         )}
         
       </div>

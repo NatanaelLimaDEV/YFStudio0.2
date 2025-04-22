@@ -1,0 +1,10 @@
+.calendar{
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    width: 400px;
+}
+
+.MuiSvgIcon-root {
+    color: #f48fb1;
+}
