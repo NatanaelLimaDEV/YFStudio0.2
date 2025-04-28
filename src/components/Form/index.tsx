@@ -13,7 +13,7 @@ type Props = {
   service?: string;
 };
 
-export default function Form({ handleForm, form, service }: Props) {
+export default function Form({ handleForm, service }: Props) {
   const [services, setServices] = useState("");
   const [name, setName] = useState("");
   const [music, setMusic] = useState("");
@@ -28,10 +28,6 @@ export default function Form({ handleForm, form, service }: Props) {
   if (index !== -1) {
     time.splice(index, 1);
   }
-
-  const today = new Date();
-  const [day, month, year] = today.toLocaleDateString("pt-BR").split("/");
-  const todayInputDate = `${year}-${month}-${day}`;
 
   if (!services && service) {
     setServices(service);

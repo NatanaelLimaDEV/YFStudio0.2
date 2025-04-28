@@ -1,4 +1,3 @@
-import { BrowserRouter } from "react-router-dom"
 import { ToastContainer } from "react-toastify"
 import Home from "./pages/Home"
 

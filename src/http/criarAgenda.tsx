@@ -1,5 +1,3 @@
-import { Dayjs } from "dayjs";
-
 type dadosAgenda = {
   nome: string;
   email: string;
