@@ -150,6 +150,22 @@
         top: calc(50% - 200px);
         animation: slideInRight 0.8s ease-out forwards;
     }
+
+
+
+
+    .form {
+        height: 100%;
+    }
+    
+    .iconClosed{
+        right: 20px;
+        top: 20px;
+    }
+    
+    .form>div{
+        max-width: 60%;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {

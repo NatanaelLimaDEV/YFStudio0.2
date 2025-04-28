@@ -101,17 +101,17 @@ export default function Form({ handleForm, form, service }: Props) {
       return;
     }
 
-    // criarAgenda({
-    //   nome: name,
-    //   email: "email@email.com",
-    //   contato: "(00)00000-0000",
-    //   data: date,
-    //   hora: timeService,
-    //   servico: services,
-    //   musica: music || "",
-    //   status: "Pendente",
-    //   valor: "",
-    // });
+    criarAgenda({
+      nome: name,
+      email: "email@email.com",
+      contato: "(00)00000-0000",
+      data: date,
+      hora: timeService,
+      servico: services,
+      musica: music || "",
+      status: "Pendente",
+      valor: "",
+    });
 
     // Mensagem no WhatsApp
     const message = `Procedimento: ${services}%0ANome: ${name}%0AMúsica: ${music}%0AData: ${date}%0AHorário: 10:00h`;
@@ -208,7 +208,7 @@ export default function Form({ handleForm, form, service }: Props) {
                   type="button"
                   onClick={() => handleTime(t)}
                   disabled
-                >{`${t}:00h`}</button>
+                >{`${t}:00`}</button>
               ) : (
                 <button
                   key={index}
@@ -216,7 +216,7 @@ export default function Form({ handleForm, form, service }: Props) {
                   id={`click${t}`}
                   type="button"
                   onClick={() => handleTime(t)}
-                >{`${t}:00h`}</button>
+                >{`${t}:00`}</button>
               );
             })}
           </div>
