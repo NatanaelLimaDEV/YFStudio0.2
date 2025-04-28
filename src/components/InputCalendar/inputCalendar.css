@@ -1,10 +1,13 @@
 .calendar{
-    background-color: #fff;
-    border: 0;
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #fff;
     border-radius: 5px;
-    width: 400px;
+    font-size: 15px;
+    background-color: #616e7a;
+    color: #ffffff;
 }
 
 .MuiSvgIcon-root {
-    color: #f48fb1;
+    color: #4C5760;
 }

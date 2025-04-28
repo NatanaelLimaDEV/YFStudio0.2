@@ -1,9 +1,11 @@
+import { Dayjs } from "dayjs";
+
 type dadosAgenda = {
   nome: string;
   email: string;
   contato: string;
   data: string;
-  hora: string;
+  hora: number[];
   servico: string;
   musica: string;
   status: string;

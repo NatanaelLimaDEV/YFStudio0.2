@@ -28,3 +28,11 @@ ul{
 button:hover, a:hover{
   scale: 1.05;
 }
+
+input:focus, select:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: #C3D2E9;
+}
