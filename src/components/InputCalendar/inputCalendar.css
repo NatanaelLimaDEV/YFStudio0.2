@@ -1,4 +1,4 @@
-.calendar{
+.calendar {
     width: 100%;
     padding: 15px 20px;
     border: 2px solid #fff;
@@ -10,4 +10,8 @@
 
 .MuiSvgIcon-root {
     color: #4C5760;
+}
+
+.MuiPickersCalendarHeader-label {
+    text-transform: capitalize;
 }
