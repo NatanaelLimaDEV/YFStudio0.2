@@ -54,6 +54,7 @@
 
     .reviews>div {
         max-width: 430px;
+        min-width: 430px;
     }
 
     .footer>a>span {
@@ -128,6 +129,7 @@
 
     .reviews>div {
         max-width: 600px;
+        min-width: 600px;
     }
 
     .footer a {
@@ -163,8 +165,9 @@
         top: 20px;
     }
     
-    .form>div{
+    .step{
         max-width: 60%;
+        min-height: fit-content;
     }
 }
 
@@ -262,6 +265,7 @@
     .reviews>div {
         border-radius: 5px;
         max-width: 230px;
+        min-width: 230px;
     }
 
     .footer {
@@ -376,6 +380,7 @@
     .reviews>div {
         border-radius: 5px;
         max-width: 250px;
+        min-width: 250px;
     }
 
     .footer {
@@ -490,7 +495,10 @@
 
     .reviews>div {
         border-radius: 5px;
-        max-width: 350px;
+    }
+
+    .reviews>div>div>div{
+        min-height: 200px;
     }
 
     .footer {

@@ -1,6 +1,6 @@
 import { MdOutlineClose, MdSend } from "react-icons/md";
 import { criarAgenda } from "../../http/criarAgenda";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 import "./form.css";
@@ -9,11 +9,14 @@ import InputCalendar from "../InputCalendar";
 import { useQuery } from "@tanstack/react-query";
 import { getListaAgendamentos } from "../../http/getListaAgendamentos";
 import { Dayjs } from "dayjs";
+import MoreInfo from "../MoreInfo/inde";
+import FormAddReview from "../FormAddReview";
 
 type Props = {
-  handleForm: () => void;
-  form: boolean;
-  service?: string;
+  handleForm: () => void,
+  service?: string,
+  changePg: number,
+  setChangePg: Dispatch<SetStateAction<number>>,
 };
 
 type dataAgenda = {
@@ -29,7 +32,12 @@ type dataAgenda = {
   valor: string;
 };
 
-export default function Form({ handleForm, service }: Props) {
+export default function Form({
+  handleForm,
+  service,
+  changePg,
+  setChangePg,
+}: Props) {
   const [services, setServices] = useState("");
   const [name, setName] = useState("");
   const [music, setMusic] = useState("");
@@ -37,9 +45,11 @@ export default function Form({ handleForm, service }: Props) {
   const [timeService, setTimeService] = useState<number[]>([]);
   const [scheduledTime, setScheduledTime] = useState<number[]>([]);
 
-  const [step, setStep] = useState(1)
-  const [checkDisabled, setCheckDisabled] = useState<number[]>()
-  const [selectedIds, setSelectedIds] = useState<number []>()
+  const [checkDisabled, setCheckDisabled] = useState<number[]>();
+  const [selectedIds, setSelectedIds] = useState<number[]>();
+
+  console.log(changePg);
+  
 
   const { data } = useQuery<dataAgenda[]>({
     queryKey: ["agenda"],
@@ -63,16 +73,16 @@ export default function Form({ handleForm, service }: Props) {
       return;
     }
 
-    setStep(2)
+    setChangePg(2)
   }
 
   function returnStep() {
-    setSelectedIds([])
-    setCheckDisabled([])
+    setSelectedIds([]);
+    setCheckDisabled([]);
     setTimeService([]);
     setDate("");
 
-    setStep(1)
+    setChangePg(1)
   }
 
   function checkDay(day: Dayjs | null) {
@@ -86,28 +96,26 @@ export default function Form({ handleForm, service }: Props) {
   }
 
   function listTime(service: string, agendaTime: number[]) {
-
-    let check: number[] = [...agendaTime]
+    let check: number[] = [...agendaTime];
     if (service === "Alongamento" || service === "Manutenção") {
-      check = [...agendaTime, 20, 21, 22]
+      check = [...agendaTime, 20, 21, 22];
     } else if (service === "Esmaltação" || service === "Banho em gel") {
-      check = [...agendaTime, 21, 22]
+      check = [...agendaTime, 21, 22];
     }
 
-    
-    setCheckDisabled([...new Set(check)])
-    setTimeService([])
-    setSelectedIds([])
+    setCheckDisabled([...new Set(check)]);
+    setTimeService([]);
+    setSelectedIds([]);
   }
 
   function handleTime(t: number) {
-    if(!date){
-      toast.error("Selecione uma data para listar os horários!")
-      return
+    if (!date) {
+      toast.error("Selecione uma data para listar os horários!");
+      return;
     }
 
-    setSelectedIds([])
-    setTimeService([])
+    setSelectedIds([]);
+    setTimeService([]);
     const newSelected: number[] = [];
 
     if (services === "Alongamento" || services === "Manutenção") {
@@ -118,12 +126,12 @@ export default function Form({ handleForm, service }: Props) {
           toast.error(`Ops! A hora ${i}:00h já está agendada!`);
           toast.info(`O tipo de proceidmento ${services} dura 4 horas!`);
 
-          setSelectedIds([])
-          setTimeService([])
+          setSelectedIds([]);
+          setTimeService([]);
           return;
         }
-        newSelected.push(i)
-        setTimeService((prev) => [...prev, i])
+        newSelected.push(i);
+        setTimeService((prev) => [...prev, i]);
       }
     } else if (services === "Esmaltação" || services === "Banho em gel") {
       let cont = t + 3;
@@ -133,16 +141,16 @@ export default function Form({ handleForm, service }: Props) {
           toast.error(`Ops! A hora ${i}:00h já está agendada!`);
           toast.info(`O tipo de proceidmento ${services} dura 3 horas!`);
 
-          setSelectedIds([])
-          setTimeService([])
+          setSelectedIds([]);
+          setTimeService([]);
           return;
         }
-        newSelected.push(i)
-        setTimeService((prev) => [...prev, i])
+        newSelected.push(i);
+        setTimeService((prev) => [...prev, i]);
       }
     }
 
-    setSelectedIds(newSelected)
+    setSelectedIds(newSelected);
   }
 
   function send(e: React.FormEvent<HTMLFormElement>) {
@@ -190,13 +198,13 @@ export default function Form({ handleForm, service }: Props) {
     setName("");
     setMusic("");
     setDate("");
-    setTimeService([])
+    setTimeService([]);
 
-    setStep(1)
+    setChangePg(0)
   }
 
   return (
-    <form className="form" onSubmit={send}>
+    <div className="form">
       <MdOutlineClose
         className="iconClosed"
         onClick={() => {
@@ -204,89 +212,97 @@ export default function Form({ handleForm, service }: Props) {
           clearForm();
         }}
       />
-      <div className={`step ${step === 1 ? "active" : ""}`} id="step1">
-        <div>
-          <label htmlFor="service">Qual o tipo de procedimento?</label>
-          <select
-            id="service"
-            value={services}
-            onChange={(e) => setServices(e.target.value)}
-          >
-            <option value="" disabled>
-              Clique para escolher
-            </option>
-            <option value="Alongamento">Alongamento</option>
-            <option value="Manutenção">Manutenção</option>
-            <option value="Esmaltação">Esmaltação</option>
-            <option value="Banho em gel">Banho em gel</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="name">Nome</label>
-          <input
-            id="name"
-            type="text"
-            placeholder="Digite seu nome"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            autoComplete="off"
-          />
-        </div>
-        <div>
-          <label htmlFor="music">Qual estilo de música você curte?</label>
-          <input
-            id="music"
-            type="text"
-            placeholder="Digite seu estilo favorito"
-            value={music}
-            onChange={(e) => setMusic(e.target.value)}
-            autoComplete="off"
-          />
-        </div>
-        <section className="buttonForm">
-          <button className="next" type="button" onClick={nextStep}>
-            Avançar
-            <FaArrowCircleRight />
-          </button>
-        </section>
+
+      <div className={`step ${changePg == 4 ? "active" : ""}`} id="step4">
+        <FormAddReview handleForm={handleForm} setChangePg={setChangePg}/>
       </div>
 
-      <div className={`step ${step === 2 ? "active" : ""}`} id="step2">
-        <div>
-          <label htmlFor="date">Selecione a data</label>
-          <InputCalendar
-            date={date}
-            setDate={setDate}
-            checkDate={checkDay}
-          />
-        </div>
-        <div>
-          <label htmlFor="">Selecione o horário</label>
-          <div className="div-time">
-            {time.map((t, index) => {
-              return (
-                <button
-                  key={index}
-                  className={`button-time ${checkDisabled?.includes(t) ? "disabled" : ""} ${selectedIds?.includes(t) ? "select" : ""}`}
-                  id={`click${t}`}
-                  type="button"
-                  onClick={() => handleTime(t)}
-                >{`${t}:00`}</button>
-              );
-            })}
-          </div>
-        </div>
-        <section className="button-step-2">
-          <button className="return next" type="button" onClick={returnStep}>
-            <FaArrowCircleLeft />
-            Voltar
-          </button>
-          <button className="send next" type="submit">
-            Enviar
-            <MdSend />
-          </button>
-        </section>
+      <div className={`step ${changePg == 3 ? "active" : ""}`} id="step3">
+        <MoreInfo />
       </div>
-    </form>
+
+      <form className="form-schedule" onSubmit={send}>
+        <div className={`step ${changePg === 1 ? "active" : ""}`} id="step1">
+          <div>
+            <label htmlFor="service">Qual o tipo de procedimento?</label>
+            <select
+              id="service"
+              value={services}
+              onChange={(e) => setServices(e.target.value)}
+            >
+              <option value="" disabled>
+                Clique para escolher
+              </option>
+              <option value="Alongamento">Alongamento</option>
+              <option value="Manutenção">Manutenção</option>
+              <option value="Esmaltação">Esmaltação</option>
+              <option value="Banho em gel">Banho em gel</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="name">Nome</label>
+            <input
+              id="name"
+              type="text"
+              placeholder="Digite seu nome"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              autoComplete="off"
+            />
+          </div>
+          <div>
+            <label htmlFor="music">Qual estilo de música você curte?</label>
+            <input
+              id="music"
+              type="text"
+              placeholder="Digite seu estilo favorito"
+              value={music}
+              onChange={(e) => setMusic(e.target.value)}
+              autoComplete="off"
+            />
+          </div>
+          <section className="buttonForm">
+            <button className="next" type="button" onClick={nextStep}>
+              Avançar
+              <FaArrowCircleRight />
+            </button>
+          </section>
+        </div>
+        <div className={`step ${changePg === 2 ? "active" : ""}`} id="step2">
+          <div>
+            <label htmlFor="date">Selecione a data</label>
+            <InputCalendar date={date} setDate={setDate} checkDate={checkDay} />
+          </div>
+          <div>
+            <label htmlFor="">Selecione o horário</label>
+            <div className="div-time">
+              {time.map((t, index) => {
+                return (
+                  <button
+                    key={index}
+                    className={`button-time ${
+                      checkDisabled?.includes(t) ? "disabled" : ""
+                    } ${selectedIds?.includes(t) ? "select" : ""}`}
+                    id={`click${t}`}
+                    type="button"
+                    onClick={() => handleTime(t)}
+                  >{`${t}:00`}</button>
+                );
+              })}
+            </div>
+          </div>
+          <section className="button-step-2">
+            <button className="return next" type="button" onClick={returnStep}>
+              <FaArrowCircleLeft />
+              Voltar
+            </button>
+            <button className="send next" type="submit">
+              Enviar
+              <MdSend />
+            </button>
+          </section>
+        </div>
+      </form>
+    </div>
   );
 }

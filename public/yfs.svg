@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2021 (64-Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="15.2398mm" height="15.2398mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1523.98 1523.98"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <font id="FontID0" horiz-adv-x="794" font-variant="normal" style="fill-rule:nonzero" font-weight="900">
+	<font-face 
+		font-family="Gotham Black">
+		<font-face-src>
+			<font-face-name name="Gotham Black"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="F" horiz-adv-x="647" d="M61.9958 700.001l560.006 0 0 -169.995 -365.999 0 0 -118.003 331.003 0 0 -161.999 -331.003 0 0 -250.003 -194.007 0 0 700.001z"/>
+   <glyph unicode="Y" horiz-adv-x="722" d="M263.999 262.003l-265.995 437.998 220.995 0 143.999 -254.999 145.003 254.999 217.003 0 -266.007 -434.998 0 -265.003 -194.999 0 0 262.003z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Gotham Black";font-variant:normal;font-weight:900;src:url("#FontID0") format(svg)}
+    .fil1 {fill:#171717}
+    .fil0 {fill:#FFB4B1}
+    .fnt0 {font-weight:900;font-size:846.67px;font-family:'Gotham Black'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+ </g>
+ <g id="Layer_x0020_1_0">
+  <metadata id="CorelCorpID_1Corel-Layer"/>
+ </g>
+ <g id="Layer_x0020_1_1">
+  <metadata id="CorelCorpID_2Corel-Layer"/>
+  <rect class="fil0" x="-0.53" y="0.72" width="1521.27" height="1520.02" rx="263.38" ry="261.24"/>
+  <text x="193.45" y="1058.33"  class="fil1 fnt0">YF</text>
+ </g>
+</svg>

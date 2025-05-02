@@ -1,0 +1,52 @@
+.services {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    height: auto;
+    color: #4C5760;
+    width: 350px;
+    margin: 10px 0;
+    gap: 10px;
+}
+
+.services>h1 {
+    font-size: 20px;
+}
+
+.services>div {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.services>div>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.services img {
+    max-width: 90px;
+    border-radius: 5px;
+}
+
+.select-service {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.select-service button {
+    padding: 6px 10px;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #4C5760;
+}

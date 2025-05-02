@@ -1,5 +1,6 @@
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { SlLocationPin } from "react-icons/sl";
+import './footer.css'
 
 export default function Footer() {
   return (

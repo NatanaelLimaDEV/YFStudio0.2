@@ -29,10 +29,25 @@ button:hover, a:hover{
   scale: 1.05;
 }
 
-input:focus, select:focus {
+textarea{
+  resize: none;
+  font-weight: 600;
+}
+
+input, select, textarea{
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: #616e7a;
+  color: #ffffff;
+}
+
+input:focus, select:focus, textarea:focus {
   outline: none;
 }
 
-input::placeholder {
+input::placeholder, select::placeholder, textarea::placeholder {
   color: #C3D2E9;
 }

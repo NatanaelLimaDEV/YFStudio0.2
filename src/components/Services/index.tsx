@@ -1,6 +1,7 @@
 import unha1 from "../../assets/ftUnhas/Unha1.png";
 import unha2 from "../../assets/ftUnhas/Unha2.png";
 import unha4 from "../../assets/ftUnhas/Unha4.png";
+import './services.css'
 
 type Props = {
   selectService: (service: string) => void

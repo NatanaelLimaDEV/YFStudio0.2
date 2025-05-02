@@ -1,0 +1,23 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 40px;
+    position: fixed;
+    bottom: 10px;
+}
+
+.footer a {
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+    color: #fff;
+    background-color: #4C5760;
+    padding: 10px 10px;
+    border-radius: 50px;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.footer>a>span {
+    display: none;
+}

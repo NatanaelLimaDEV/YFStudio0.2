@@ -1,0 +1,9 @@
+.form-review{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bt-form-review{
+    align-self: flex-end;
+}
