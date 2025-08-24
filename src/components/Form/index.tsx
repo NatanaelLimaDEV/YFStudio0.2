@@ -80,7 +80,7 @@ export default function Form({
     }
 
     // Validar telefone
-    const regex = /^\(\d{2}\) \d{4,5}-\d{4}$/;
+    const regex = /^\(\d{2}\) \d{4,5}\d{4}$/;
     if (!regex.test(contact)) {
       setOpenDialog(true);
       setDialogText("Número de telefone inválido! Use o formato (DD) 9XXXX-XXXX");
@@ -293,7 +293,7 @@ export default function Form({
 
                 // Formatar o telefone
                 if (value.length > 6) {
-                  value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+                  value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}${value.slice(7)}`;
                 } else if (value.length > 2) {
                   value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
                 }
@@ -339,7 +339,10 @@ export default function Form({
                       id={`click${t}`}
                       type="button"
                       onClick={() => handleTime(t)}
-                    >{`${t}:00`}</button>
+                    >
+                      {checkDisabled?.includes(t) && <span className="disabled-mark"> ✖ </span>}
+                      {`${t}:00`}
+                    </button>
                   );
                 })}
             </div>
