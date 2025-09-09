@@ -18,15 +18,15 @@ export default function MoreInfo() {
         <ul className="list-price">
           <li>
             <span>
-                <FaCircle className="icon-price" />
-                Alongamento em gel <FaArrowRight className="icon-price" />
-            </span> 
+              <FaCircle className="icon-price" />
+              Alongamento em gel <FaArrowRight className="icon-price" />
+            </span>
             <span>R$ {services.alongamento},00</span>
           </li>
           <li>
             <span>
-                <FaCircle className="icon-price" />
-                Manutenção <FaArrowRight className="icon-price" />
+              <FaCircle className="icon-price" />
+              Manutenção <FaArrowRight className="icon-price" />
             </span>
             <span>R$ {services.manutencao},00</span>
           </li>
@@ -48,9 +48,9 @@ export default function MoreInfo() {
       </div>
       <div className="contact">
         <span>Para mais informações, entre em contato!</span>
-        <button>
+        <a href="https://wa.me/558898072612?text=Olá! Estou interessada nos procedimentos e gostaria de mais informações." target="_blank">
           <FaWhatsapp /> WhatsApp
-        </button>
+        </a>
       </div>
     </div>
   );

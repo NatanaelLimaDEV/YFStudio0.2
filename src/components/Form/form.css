@@ -107,6 +107,8 @@ select option:disabled {
     pointer-events: none;
     opacity: 0.5;
     color: tomato;
+    font-size: 10px;
+    font-weight: 800;
 }
 
 .button-time:hover {
